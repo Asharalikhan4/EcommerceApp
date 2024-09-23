@@ -1,0 +1,3 @@
+interface NotificationBarPropsTypes {
+    message: string;
+};
