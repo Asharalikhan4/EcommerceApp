@@ -2,21 +2,27 @@ import { FC } from "react";
 import { Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import NotificationBar from "../../components/NotificationBar/NotificationBar";
 import ProductList from "../../components/ProductList/ProductList";
-import Carousel from "../../components/Carousel/Carousel";
+import AppCarousel from "../../components/AppCarousel/AppCarousel";
+import Navbar from "../../components/Navbar/Navbar";
+import Categories from "../../components/Categories/Categories";
 
 const HomeScreen: FC<any> = ({ navigation, route }) => {
 
     function pressHandler() {
         console.log("Move to Signup Screen");
         navigation.navigate("Signup");
-    }
+    };
 
     return (
         <SafeAreaView>
             <ScrollView>
                 <NotificationBar message="Elevate Your Style!" />
-                <Carousel />
-                <ProductList heading="New Arrivals" route={route} />
+                {/* <Navbar /> */}
+                <AppCarousel />
+                <Categories />
+                <ProductList heading="New Arrivals" />
+                <ProductList heading="Mens" />
+                <ProductList heading="Womens" />
             </ScrollView>
         </SafeAreaView>
     );

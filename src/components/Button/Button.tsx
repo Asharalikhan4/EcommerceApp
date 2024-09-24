@@ -1,22 +1,17 @@
 import { FC } from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import { View, Text, Pressable } from "react-native";
 
 const Button: FC<ButtonPropsTypes> = ({ text, style, onClick }) => {
+    console.log("Button props", text, style, onClick);
     return (
-        <View style={[style]}>
+        <View>
             <Pressable onPress={onClick}>
-                <Text style={styles.buttonText}>
+                <Text style={[style]}>
                     {text}
                 </Text>
             </Pressable>
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    buttonText: {
-        textAlign: "center",
-    }
-});
 
 export default Button;

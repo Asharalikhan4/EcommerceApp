@@ -12,9 +12,13 @@ const ProductPage: React.FC<ProductPageProps> = ({ route }) => {
 
     return (
         <View style={styles.container}>
-            <Image source={require("../../../assets/images/MorisChair.webp")} style={styles.image} />
-            <Text style={styles.name}>{name}</Text>
-            <Text style={styles.price}>{price}</Text>
+            <View style={styles.imageContainer}>
+                <Image source={require("../../../assets/images/Modal1.webp")} style={styles.image} />
+            </View>
+            <Text style={styles.name}>
+                HIGHLANDER Men Olive Green & Black Slim Fit Checked Casual Shirt
+            </Text>
+            <Text style={styles.price}>₹428</Text>
         </View>
     );
 };
@@ -22,24 +26,25 @@ const ProductPage: React.FC<ProductPageProps> = ({ route }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
+        paddingHorizontal: 10,
+    },
+    imageContainer: {
         alignItems: "center",
-        padding: 20,
     },
     image: {
-        width: 200,
-        height: 200,
+        width: 600,
+        height: 500,
         resizeMode: "contain",
         marginBottom: 20,
     },
     name: {
-        fontSize: 24,
-        fontWeight: "bold",
+        fontSize: 16,
         marginBottom: 10,
     },
     price: {
         fontSize: 18,
         color: "#888",
+        textAlign: "left",
     },
 });
 

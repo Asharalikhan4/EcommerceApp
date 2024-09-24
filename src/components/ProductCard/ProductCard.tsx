@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, Image, StyleSheet, Dimensions, Pressable } from "react-native";
+import AddToCart from "../AddToCart/AddToCart";
 
 const { width } = Dimensions.get("window");
 
@@ -22,8 +23,13 @@ const ProductCard: FC<ProductCardPropsTypes> = ({ imageUrl, name, price }) => {
                     />
                 </View>
                 <View style={styles.textContainer}>
-                    <Text style={styles.productName}>{name}</Text>
-                    <Text style={styles.productPrice}>{price}</Text>
+                    <View>
+                        <Text style={styles.productName}>{name}</Text>
+                        <Text style={styles.productPrice}>{price}</Text>
+                    </View>
+                    <View>
+                        <AddToCart />
+                    </View>
                 </View>
             </View>
         </Pressable>
@@ -32,7 +38,7 @@ const ProductCard: FC<ProductCardPropsTypes> = ({ imageUrl, name, price }) => {
 
 const styles = StyleSheet.create({
     cardContainer: {
-        margin: 10,
+        marginRight: 8,
         backgroundColor: "#fff",
         borderRadius: 10,
         shadowColor: "#000",
@@ -42,7 +48,7 @@ const styles = StyleSheet.create({
         elevation: 5,
         marginBottom: 20,
         overflow: "hidden",
-        width: width * 0.4, // 90% of the screen width
+        width: width * 0.5, // 90% of the screen width
         alignSelf: "center",
     },
     imageContainer: {
@@ -55,6 +61,9 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
     },
     textContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
         padding: 15,
     },
     productName: {
