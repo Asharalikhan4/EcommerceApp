@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { SafeAreaView, View, StyleSheet, ScrollView } from "react-native";
-import { Text } from "react-native-svg";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 
 const CategoriesScreen: FC = () => {

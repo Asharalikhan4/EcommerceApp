@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         elevation: 5,
         marginBottom: 20,
         overflow: "hidden",
-        width: width * 0.5, // 90% of the screen width
+        width: width * 0.45, // 90% of the screen width
         alignSelf: "center",
     },
     imageContainer: {

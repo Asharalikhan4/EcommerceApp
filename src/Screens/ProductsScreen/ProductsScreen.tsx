@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import { ProductsScreenPropsTypes } from "./ProductsScreenTypes";
 import ProductCard from "../../components/ProductCard/ProductCard";
 
@@ -10,6 +10,7 @@ const ProductsScreen: FC<ProductsScreenPropsTypes> = ({ route }) => {
                 <View>
                     <Text style={styles.productsHeading}>{route?.params?.productsHeading}</Text>
                 </View>
+                <ScrollView>
                 <View style={styles.productsContainer}>
                     <ProductCard />
                     <ProductCard />
@@ -20,6 +21,7 @@ const ProductsScreen: FC<ProductsScreenPropsTypes> = ({ route }) => {
                     <ProductCard />
                     <ProductCard />
                 </View>
+                </ScrollView>
             </View>
         </SafeAreaView>
     );
@@ -27,7 +29,7 @@ const ProductsScreen: FC<ProductsScreenPropsTypes> = ({ route }) => {
 
 const styles = StyleSheet.create({
     productsScreenContainer: {
-        marginHorizontal: 10,
+        marginHorizontal: 8,
         marginTop: 10,
     },
     productsHeading: {
@@ -37,7 +39,6 @@ const styles = StyleSheet.create({
     },
     productsContainer: {
         marginTop: 10,
-        display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
         gap: 10,
