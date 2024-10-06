@@ -14,13 +14,13 @@ const Input: FC<InputPropsTypes> = ({ text, value, onChange, style }) => {
 
 const styles = StyleSheet.create({
     input: {
-        width: 300,
-        height: 50,
-        margin: 10,
-        padding: 10,
-        borderWidth: 1,
-        borderRadius: 5,
-        borderColor: "black",
+        // width: 300,
+        // height: 50,
+        // margin: 10,
+        // padding: 10,
+        // borderWidth: 1,
+        // borderRadius: 5,
+        // borderColor: "black",
     },
 });
 

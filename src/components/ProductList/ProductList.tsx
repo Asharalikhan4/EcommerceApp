@@ -18,23 +18,23 @@ const ProductList: FC<ProductListPropsTypes> = ({ heading }) => {
         <View style={styles.productListContainer}>
             <View style={styles.productListHeadingContainer}>
                 <Text style={styles.producListHeading}>{heading}</Text>
-                <Button text="View All" style={styles.button} onClick={viewAllHandler} />
+                <Button text="Shop Now" style={styles.button} onClick={viewAllHandler} />
             </View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 <View style={styles.productList}>
                     <ProductCard
-                        imageUrl={"ashar"}
-                        name="Moris Chair"
+                        imageUrl={"https://images.urbndata.com/is/image/FreePeople/83669218_021_a?$a15-category$&qlt=80&fit=constrain"}
+                        name="Sweet Nothing Cardi"
                         price="$399.99"
                     />
                     <ProductCard
-                        imageUrl={"ashar"}
-                        name="Leather Chair"
+                        imageUrl={"https://images.urbndata.com/is/image/FreePeople/88686977_031_c?$a15-category$&qlt=80&fit=constrain"}
+                        name="FP One Ravenna Printed Convertible Maxi Skirt"
                         price="$499.99"
                     />
                     <ProductCard
-                        imageUrl={"ashar"}
-                        name="Modern Chair"
+                        imageUrl={"https://images.urbndata.com/is/image/FreePeople/94894169_001_a?$a15-category$&qlt=80&fit=constrain"}
+                        name="We The Free Total Eclipse Tee"
                         price="$299.99"
                     />
                 </View>

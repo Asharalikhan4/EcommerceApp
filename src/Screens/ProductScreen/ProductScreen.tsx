@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import { ProductPageRouteParams } from "./ProductTypes";
+import Button from "../../components/Button/Button";
+import Container from "../../components/Container/Container";
 
 type ProductPageProps = {
     route: RouteProp<ProductPageRouteParams, "ProductPage">;
@@ -10,24 +12,41 @@ type ProductPageProps = {
 const ProductPage: React.FC<ProductPageProps> = ({ route }) => {
     const { imageUrl, name, price } = route.params;
 
+    const handleAddToCart = () => {
+
+    };
+
+    const handleAddToWishlist = () => {
+
+    };
+
     return (
-        <View style={styles.container}>
+        <Container>
             <View style={styles.imageContainer}>
-                <Image source={require("../../../assets/images/Modal1.webp")} style={styles.image} />
+                <Image source={{ uri: imageUrl }} style={styles.image} />
+            </View>
+            <View>
+                <Text>*****</Text>
             </View>
             <Text style={styles.name}>
-                HIGHLANDER Men Olive Green & Black Slim Fit Checked Casual Shirt
+                {name}
             </Text>
-            <Text style={styles.price}>₹428</Text>
-        </View>
+            <Text style={styles.price}>
+                <View>
+                    <Text>
+                        Price: {price}
+                    </Text>
+                </View>
+            </Text>
+            <Container>
+                <Button text="Add to Cart" onClick={handleAddToCart} style={styles.addToCartBtn} />
+                <Button text="Add to Wishlist" onClick={handleAddToWishlist} style={styles.addToWishlistBtn} />
+            </Container>
+        </Container>
     );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingHorizontal: 10,
-    },
     imageContainer: {
         alignItems: "center",
     },
@@ -38,14 +57,30 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     name: {
-        fontSize: 16,
+        fontSize: 22,
         marginBottom: 10,
     },
     price: {
-        fontSize: 18,
+        fontSize: 20,
         color: "#888",
         textAlign: "left",
     },
+    btnContainer: {
+        gap: 10,
+    },
+    addToCartBtn: {
+        textAlign: "center",
+        backgroundColor: "#f0c14b",
+        borderColor: "black",
+        borderWidth: 2,
+        padding: 10,
+    },
+    addToWishlistBtn: {
+        textAlign: "center",
+        borderColor: "black",
+        borderWidth: 2,
+        padding: 10,
+    }
 });
 
 export default ProductPage;

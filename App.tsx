@@ -17,7 +17,7 @@ import ProductsScreen from "./src/Screens/ProductsScreen/ProductsScreen";
 
 import SearchIcon from "./assets/svg/Search.svg";
 import UserIcon from "./assets/svg/User.svg";
-import CartIcon from "./assets/svg/Cart.svg";
+import CartNewIcon from "./assets/svg/CartNew.svg";
 import CategoriesScreen from "./src/Screens/CategoriesScreen/CategoriesScreen";
 
 function HomeStack() {
@@ -57,7 +57,7 @@ function App(): React.JSX.Element {
           <Tab.Screen
             name="Cart"
             component={CartScreen}
-            options={{ tabBarLabel: "Cart", tabBarIcon: () => <CartIcon size={20} /> }}
+            options={{ tabBarLabel: "Cart", tabBarIcon: () => <CartNewIcon size={20} /> }}
           />
           <Tab.Screen
             name="SignUp"
