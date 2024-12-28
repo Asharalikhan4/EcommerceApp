@@ -20,6 +20,8 @@ const ProductPage: React.FC<ProductPageProps> = ({ route }) => {
 
     };
 
+    const sizeArray = ["S", "M", "L", "XL", "XXL"];
+
     return (
         <Container>
             <View style={styles.imageContainer}>
@@ -38,6 +40,20 @@ const ProductPage: React.FC<ProductPageProps> = ({ route }) => {
                     </Text>
                 </View>
             </Text>
+            <View>
+                <View>
+                    <Text>
+                        Size:
+                    </Text>
+                </View>
+                <View style={styles.sizeBtnContainer}>
+                    {sizeArray.map((size, index) => (
+                        <View style={styles.sizeBtn}>
+                            <Button key={index} text={size} onClick={() => { }} style={{ margin: 5 }} />
+                        </View>
+                    ))}
+                </View>
+            </View>
             <Container>
                 <Button text="Add to Cart" onClick={handleAddToCart} style={styles.addToCartBtn} />
                 <Button text="Add to Wishlist" onClick={handleAddToWishlist} style={styles.addToWishlistBtn} />
@@ -67,6 +83,14 @@ const styles = StyleSheet.create({
     },
     btnContainer: {
         gap: 10,
+    },
+    sizeBtnContainer: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+    },
+    sizeBtn: {
+        marginRight: 10,
+        borderBottomWidth: 2,
     },
     addToCartBtn: {
         textAlign: "center",
